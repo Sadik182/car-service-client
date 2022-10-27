@@ -8,12 +8,12 @@ const AddService = () => {
   const descriptionRef = useRef('');
   const imageRef = useRef('');
   const handleAddService = e => {
+    e.preventDefault();
     const title = titleRef.current.value;
     const price = priceRef.current.value;
     const description = descriptionRef.current.value;
     const image = imageRef.current.value;
     const data = {title, price, description, image}
-    e.preventDefault()
     console.log('Service Added', data);
   }
   return (
