@@ -1,8 +1,10 @@
 import React from "react";
 import { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const AddService = () => {
+  const navigate = useNavigate()
   const nameRef = useRef('');
   const priceRef = useRef('');
   const descriptionRef = useRef('');
@@ -27,7 +29,8 @@ const AddService = () => {
     .then(res => res.json())
     .then(data => {
       if(data) {
-        window.alert('Data is added Successfully')
+        window.alert('Data is added Successfully');
+        navigate('/home');
       }
     })
   }
